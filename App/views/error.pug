@@ -1,0 +1,38 @@
+doctype html
+html
+	head
+		meta(charset="utf8")
+		- var title = 'Error '+error.status
+		title=title
+		meta(name="viewport", content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no")
+
+		//- #CSSS
+		link(rel="stylesheet", type="text/css", media="screen", href="/css/bootstrap.min.css")
+		link(rel="stylesheet", type="text/css", href="/css/toastr.css")
+		link(rel="stylesheet", type="text/css", media="screen", href="/css/font-awesome.min.css")
+		link(rel="stylesheet", type="text/css", media="screen", href="/css/smartadmin-production.min.css")
+		link(rel="stylesheet", type="text/css", media="screen", href="/css/smartadmin-production-plugins.min.css")
+		link(rel="stylesheet", type="text/css", media="screen", href="/css/smartadmin-skins.min.css")
+		link(rel="stylesheet", type="text/css", media="screen", href="/css/mystyle.css")
+
+		//- #FAVICONS
+		link(rel="shortcut icon", type="image/x-icon", media="screen", href="/img/favicon/favicon.ico")
+		link(rel="icon", type="image/x-icon", media="screen", href="/img/favicon/favicon.ico")
+
+	body
+		div.row
+			div(class = "col-xs-12 col-sm-12 col-md-12 col-lg-12")
+				br
+				br
+				div.row
+					div.col-sm-12
+						div.text-center.error-box
+							h1(class = "error-text tada animated")
+								i(class = "fa fa-times-circle text-danger error-icon-shadow") &nbsp;
+								| Error &nbsp;
+								strong=error.status
+							h2(class="font-xl")
+								- var pesan = "Oooops, "+ message
+								strong=pesan
+							br
+							//- p(class="lead semi-bold")=message
