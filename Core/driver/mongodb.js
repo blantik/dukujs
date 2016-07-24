@@ -1,7 +1,9 @@
 function MongoDB () {
 	var mode = process.env.NODE_ENV || 'dev';
 	var mongoDB = require('mongodb').MongoClient;
-	var configDB = require('../../App/config/database.json');
+	var fs = require('fs');
+	var dbFile = '../../App/config/database.json';
+	var configDB = require(dbFile);
 	var config = configDB[mode] || configDB['dev'];
 
 	this.connect = function (cb) {

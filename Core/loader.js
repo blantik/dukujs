@@ -61,9 +61,23 @@ function Avocado() {
 	}
 
 	this.database = function(req, res, next) {
-		var driver = require('./driver/' + config_database.driver);
-		req['db'] = new driver(this.db);
-		next();
+		if (status_db == true) {
+			var driver = require('./driver/' + config_database.driver);
+			req['db'] = new driver(this.db);			
+			next();
+		}
+		else {
+			var target = path.normalize(__dirname+'/..');
+			app.set('views', path.join(target, './App/views'));
+			app.set('view engine', 'pug');
+
+			var doc = {
+				title : "Missing database config",
+				desc : "Please put config with named database.json on the directory /App/config/",
+				statusCode : 500
+			}
+			res.render('error/error', doc);
+		}
 	}
 
 	// config session , passport , redis 
@@ -155,7 +169,7 @@ function Avocado() {
 				routes(app);
 			} else {
 				app.all('*', function (req , res , next) {
-					return res.render('mongodError');
+					return res.render('error/error');
 				});
 			}
 		// } else {
