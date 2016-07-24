@@ -5,7 +5,7 @@ var express = require('express'),
 	async = require('async'),
 	path = require('path'),
 	cookieParser = require('cookie-parser'),
-	routes = require('../App/routes');
+	routes = require('./routes');
 var ClientRoutes = require('../App/handler/client/');
 
 var autoload = require('../App/config/autoload.json');

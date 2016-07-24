@@ -1,3 +1,5 @@
 module.exports = exports = function (app) {
-	var ContentHandler = require('./content'), Content = new ContentHandler();
+	app.get("/client", function(req,res,next) {
+		res.send("This is client :)");
+	})
 }
