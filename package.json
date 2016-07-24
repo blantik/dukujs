@@ -1,7 +1,7 @@
 {
   "name": "duku",
   "private": false,
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "The Incredible Node.js Framework",
   "scripts": {
     "start": "node ./Core/init.js",
