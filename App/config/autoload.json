@@ -1,0 +1,10 @@
+{
+	"dev" : {
+		"plugins" : ["passport"],
+		"features" : []
+	},
+	"production" : {
+		"plugins" : ["passport"],
+		"features" : []
+	}
+}

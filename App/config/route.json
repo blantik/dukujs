@@ -1,0 +1,4 @@
+{
+	"dev" : ["/","client","server"],
+	"production" : ["/","client","server"]
+}

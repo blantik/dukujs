@@ -1,0 +1,18 @@
+{
+	"dev" : {
+		"service" : "gmail",
+		"auth" : {
+			"user" : "steamhdmovies@gmail.com",
+			"pass" : "20041991base"
+		},
+		"status" : true
+	},
+	"production" : {
+		"service" : "gmail",
+		"auth" : {
+			"user" : "steamhdmovies@gmail.com",
+			"pass" : "20041991base"
+		},
+		"status" : true
+	}
+}

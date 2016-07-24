@@ -1,0 +1,17 @@
+{
+  "name": "duku",
+  "description": "The Incredible Node.js Framework",
+  "main": "./Core/init.js",
+  "authors": [
+    "Shodiqul Muzaki <user.creativefull@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

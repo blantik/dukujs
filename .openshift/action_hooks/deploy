@@ -1,0 +1,63 @@
+#!/bin/bash
+
+dest_dir=${OPENSHIFT_DATA_DIR};
+
+# ######### CHECK FOLDER ############### #
+if [ ! -d "${dest_dir}media" ]; then
+	echo "Avocado -> Membuat Folder Media Di Dalam Folder Data";
+	mkdir -p ${dest_dir}media
+	if [ -d "${OPENSHIFT_REPO_DIR}App/public/media" ]; then
+		echo "Avocado -> Meng-Copy Folder Media";
+		cp -rf ${OPENSHIFT_REPO_DIR}App/public/media/* ${dest_dir}media/
+		echo "Selesai Meng-Copy Folder Media";
+	fi
+	echo "Avocado -> Berhasil Membuat Folder Media";
+fi
+
+# ######### CHECK FOLDER DATABASE ############### #
+if [ ! -d "${dest_dir}database" ]; then
+	echo "Avocado -> Membuat Folder Database Di Dalam Folder Data";
+	mkdir -p ${dest_dir}database
+	# CHECK FOLDER DATABASE
+	if [ -d "${OPENSHIFT_REPO_DIR}App/public/media" ]; then
+		echo "Avocado -> Meng-Copy Folder Database"
+		cp -rf ${OPENSHIFT_REPO_DIR}database/* ${dest_dir}database/
+		echo "Selesai Meng-Copy Folder Database";
+	fi
+	echo "Avocado -> Berhasil Membuat Folder Database";
+fi
+
+# ######### CHECK FOLDER ASSETS ############### #
+if [ ! -d "${dest_dir}Assets" ]; then
+	echo "Avocado -> Membuat Folder Assets Di Dalam Folder Data";
+	mkdir -p ${dest_dir}assets
+	# CHECK FOLDER DIST
+	if [ -d "${OPENSHIFT_REPO_DIR}App/public/dist" ]; then
+		echo "Avocado -> Meng-Copy Folder Dist"
+		cp -rf ${OPENSHIFT_REPO_DIR}assets/ ${dest_dir}App/public/dist
+		echo "Selesai Meng-Copy Folder DIST";
+	fi
+	echo "Avocado -> Berhasil Membuat Folder Assets/dist";
+fi
+
+
+# ######### SYMLINK MEDIA ############### #
+if [ ! -d "${OPENSHIFT_REPO_DIR}App/public/media" ]; then
+	echo "Avocado -> Mulai Symlink Media";
+	ln -sf ${dest_dir}media ${OPENSHIFT_REPO_DIR}App/public/
+	echo "Berhasil Symlink Media";
+fi
+
+# ######## SYMLINK DATABASE ############ #
+if [ ! -d "${OPENSHIFT_REPO_DIR}database" ]; then
+	echo " Avocado -> Mulai Symlink Database";
+	ln -sf ${dest_dir}database ${OPENSHIFT_REPO_DIR}
+	echo "Berhasil Symlink Database";
+fi
+
+# ######## SYMLINK STATICS FILE ############ #
+if [ ! -d "${OPENSHIFT_REPO_DIR}App/public/dist" ]; then
+	echo " Avocado -> Mulai Symlink Assets Dist";
+	ln -sf ${dest_dir}Assets/dist ${OPENSHIFT_REPO_DIR}App/public/
+	echo "Berhasil Symlink Dist";
+fi
