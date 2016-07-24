@@ -1,0 +1,14 @@
+{
+	"dev" : {
+		"app" : {
+			"host" : "localhost",
+			"port" : 8080
+		}
+	},
+	"production" : {
+		"app" : {
+			"host" : "localhost",
+			"port" : 4040
+		}
+	}
+}

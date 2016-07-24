@@ -1,0 +1,38 @@
+{
+	"dev" : {
+		"session" : {
+			"secret" : "lautbiru",
+			"name"   : "mantan blantik",
+			"proxy"  : true,
+			"resave"   : false,
+			"saveUninitialized" : true,
+			"cookie" :{}
+		},
+		"mongodb" : {
+			"db" : "watchdojo",
+			"host" : "localhost",
+			"port" : 27017
+		},
+		"passport" : {
+			"auth" : true
+		}
+	},
+	"production" : {
+		"session" : {
+			"secret" : "lautbirulangitkelam",
+			"name"   : "mantan blantik",
+			"proxy"  : true,
+			"resave"   : false,
+			"saveUninitialized" : true,
+			"cookie" :{}
+		},
+		"mongodb" : {
+			"db" : "watchdojo",
+			"host" : "localhost",
+			"port" : 27017
+		},
+		"passport" : {
+			"auth" : true
+		}
+	}
+}

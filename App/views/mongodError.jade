@@ -1,0 +1,36 @@
+link(rel="stylesheet" href="/css/cover.css")
+body(style = 'margin : 0; overflow : hidden;')
+	div.shdm_cover.text-center
+		div.kotakan
+			h1.error-title System Maintenance
+			h2 There Are so Many Time Opportunity for us to meet but not now, you Miss me Already?
+			//- div.tempateTombol
+				a(href="/")
+					button.shdm_btn.outline-white(style = 'cursor : pointer;') HOME
+	script(src='/js/libs/jquery-2.1.1.min.js')
+	script.
+		function check_if_in_view() {
+			var window_height = $window.height();
+			var window_top_position = $window.scrollTop();
+			var window_bottom_position = (window_top_position + window_height);
+
+			$.each($animation_elements, function() {
+				var $element = $(this);
+				var element_height = $element.outerHeight();
+				var element_top_position = $element.offset().top;
+				var element_bottom_position = (element_top_position + element_height);
+
+				//- // check to see if this current container is within viewport
+				if ((element_bottom_position >= window_top_position) &&
+					(element_top_position <= window_bottom_position)) {
+					$element.addClass('in-view');
+				} else {
+					$element.removeClass('in-view');
+				}
+			});
+		}
+
+		var $window = $(window);
+		var $animation_elements = $('.shdm_cover');
+		$window.on('scroll resize', check_if_in_view);
+		$window.trigger('scroll');
