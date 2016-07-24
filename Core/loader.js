@@ -166,7 +166,11 @@ function Avocado() {
 				app.use(client);
 				ClientRoutes(client);
 
+				// SETTING ERROR MIDLEWARE
+				var ErrorHandler = require('./error').errorHandler;
+
 				routes(app);
+				app.use(ErrorHandler);
 			} else {
 				app.all('*', function (req , res , next) {
 					return res.render('error/error');
