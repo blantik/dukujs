@@ -157,28 +157,27 @@ function Avocado() {
 			// res.header("Access-Control-Allow-Credentials", "true");
 			next();
 		})
-		// if (status_db) {
-			if (status_db) {
-				var client = express();
-				client.set('views', path.join(target, './App/views'));
-				client.set('view engine', 'pug');
-				client.use(require('stylus').middleware(path.join(target, './App/public')));
-				app.use(client);
-				ClientRoutes(client);
+		if (status_db) {
+			var client = express();
+			client.set('views', path.join(target, './App/views'));
+			client.set('view engine', 'pug');
+			client.use(require('stylus').middleware(path.join(target, './App/public')));
+			// BOWER COMPONENTS
+			app.use("/bower", express.static(path.join(__dirname, '../bower_components')));			
 
-				// SETTING ERROR MIDLEWARE
-				var ErrorHandler = require('./error').errorHandler;
+			app.use(client);
+			ClientRoutes(client);
 
-				routes(app);
-				app.use(ErrorHandler);
-			} else {
-				app.all('*', function (req , res , next) {
-					return res.render('error/error');
-				});
-			}
-		// } else {
-		// 	console.log(status_db);
-		// }
+			// SETTING ERROR MIDLEWARE
+			var ErrorHandler = require('./error').errorHandler;
+
+			routes(app);
+			app.use(ErrorHandler);
+		} else {
+			app.all('*', function (req , res , next) {
+				return res.render('error/error');
+			});
+		}
 	}
 
 	this.autoload = function(req , res , next ) {
