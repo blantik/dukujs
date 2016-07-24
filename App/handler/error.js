@@ -12,7 +12,7 @@ exports.errorHandler = function (err, req, res, next){
 		type : "error"
 	};
 
-	if (err.message != "SORRY THIS PAGE NOT FOUND !!!") {
+	if (err.statusCode != 404) {
 		req.db.SaveData("logs", dataError, function(errs, hasil) {
 			if (err) console.error("Error");
 			console.error("Insert Error Data", err.message);
@@ -20,14 +20,16 @@ exports.errorHandler = function (err, req, res, next){
 	}
 	
 	if (mode == 'dev') {
-		return res.render('error',{
-			message: err.message,
-			error: err
-		})
+		return res.render('error/error',{
+			desc: err.stack,
+			title: err.message,
+			statusCode : err.statusCode
+		});
 	} else {
-		return res.render('error',{
-			message: err.message,
-			error: err
+		return res.render('error/error',{
+			desc: err,
+			title: err.message,
+			statusCode : err.statusCode
 		});
 	}
 }
