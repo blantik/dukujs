@@ -133,7 +133,7 @@ function Avocado() {
 		// ## SETTING VIEW ENGINE & CSS PRECOMPILER
 		var target = path.normalize(__dirname+'/..');
 		app.set('views', path.join(target, './App/views'));
-		app.set('view engine', 'jade');
+		app.set('view engine', 'pug');
 		app.use(require('stylus').middleware(path.join(target, './App/public')));
 		app.use(express.static(path.join(target, './App/public')));
 		app.use(cookieParser('sessionavocadotetttt'));
@@ -147,7 +147,7 @@ function Avocado() {
 			if (status_db) {
 				var client = express();
 				client.set('views', path.join(target, './App/views'));
-				client.set('view engine', 'jade');
+				client.set('view engine', 'pug');
 				client.use(require('stylus').middleware(path.join(target, './App/public')));
 				app.use(client);
 				ClientRoutes(client);
