@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node ./Core/init.js",
     "dev": "nodemon ./Core/init.js",
-    "compile": "./node_modules/.bin/grunt compile"
+    "compile": "grunt compile"
+  },
+  "bin": {
+    "duku": "bin/generate.js"
   },
   "main": "./Core/init.js",
   "dependencies": {
@@ -21,15 +24,14 @@
     "email-validator": "^1.0.4",
     "express": "^4.13.4",
     "express-session": "^1.12.1",
+    "fs-extra": "^0.30.0",
     "grunt-cli": "^1.1.0",
-    "jade": "^1.11.0",
     "jquery-file-upload-middleware": "^0.1.7",
     "jsonfile": "^2.2.3",
     "moment": "^2.11.2",
     "mongodb": "^2.1.11",
     "mongodb-backup": "^1.5.5",
     "mongodb-restore": "^1.5.2",
-    "mysql": "^2.10.2",
     "nodemailer": "^2.3.2",
     "nodemailer-smtp-transport": "^2.4.1",
     "passport": "^0.3.2",
@@ -50,7 +52,19 @@
     "grunt-contrib-cssmin": "^1.0.1",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-minjson": "^0.4.0",
-    "nodemon": "^1.9.2"
-  }
+    "grunt-minjson": "^0.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blantik/dukujs.git"
+  },
+  "keywords": [
+    "framework"
+  ],
+  "author": "Shodiqul Muzaki <mshodiqul@gmail.com> (http://creativefull.cf)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blantik/dukujs/issues"
+  },
+  "homepage": "https://github.com/blantik/dukujs#readme"
 }
