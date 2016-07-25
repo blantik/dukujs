@@ -22,14 +22,12 @@
     "express": "^4.13.4",
     "express-session": "^1.12.1",
     "grunt-cli": "^1.1.0",
-    "jade": "^1.11.0",
     "jquery-file-upload-middleware": "^0.1.7",
     "jsonfile": "^2.2.3",
     "moment": "^2.11.2",
     "mongodb": "^2.1.11",
     "mongodb-backup": "^1.5.5",
     "mongodb-restore": "^1.5.2",
-    "mysql": "^2.10.2",
     "nodemailer": "^2.3.2",
     "nodemailer-smtp-transport": "^2.4.1",
     "passport": "^0.3.2",
@@ -50,7 +48,6 @@
     "grunt-contrib-cssmin": "^1.0.1",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-minjson": "^0.4.0",
-    "nodemon": "^1.9.2"
+    "grunt-minjson": "^0.4.0"
   }
 }
