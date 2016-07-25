@@ -1,0 +1,28 @@
+html
+	head
+		title= "Error " + statusCode
+		style.
+			body {
+				background-color:#FFFEFE;
+				font-family:"Sans serif"
+			}
+			.box {
+				box-shadow:0px 0px 20px rgba(0,0,0,.3);
+				width:500px;
+				min-height:200px;
+				margin:0px auto;
+				padding:1em;
+			}
+			.title {
+				margin:0px;
+				font-size:1.5em;
+				color:#666;
+				text-align:center;
+			}
+			.description {
+				color:#777;
+			}
+	body
+		div.box
+			h1.title= title
+			p.description!= desc
