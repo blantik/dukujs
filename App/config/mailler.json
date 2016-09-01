@@ -2,16 +2,16 @@
 	"dev" : {
 		"service" : "gmail",
 		"auth" : {
-			"user" : "steamhdmovies@gmail.com",
-			"pass" : "20041991base"
+			"user" : "youemail@gmail.com",
+			"pass" : "youpassword"
 		},
 		"status" : true
 	},
 	"production" : {
 		"service" : "gmail",
 		"auth" : {
-			"user" : "steamhdmovies@gmail.com",
-			"pass" : "20041991base"
+			"user" : "youremail@gmail.com",
+			"pass" : "yourpassword"
 		},
 		"status" : true
 	}
